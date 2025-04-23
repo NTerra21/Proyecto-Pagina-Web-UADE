@@ -6,27 +6,87 @@
     <title>Desarrollo de Página Web</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .uva-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 5px;
+        /* Estilos específicos para esta página */
+        .pagina-materia {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
-        .uva-links a {
-            background-color: #2a5c82;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9em;
+        
+        .titulo-materia {
+            grid-column: 1 / 3;
+            text-align: center;
+            margin-bottom: 1rem;
         }
-        .uva-links a:hover {
-            background-color: #1a3a52;
+        
+        .seccion {
+            background-color: #e9f2f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .seccion h2 {
+            color: #2a5c82;
+            border-bottom: 2px solid #2a5c82;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .info-curso {
+            grid-column: 1 / 3;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .uva-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        .uva-item:last-child {
+            border-bottom: none;
+        }
+        
+        .uva-item h3 {
+            color: #1a3a52;
+            margin-bottom: 0.5rem;
+        }
+        
+        .uva-descripcion {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .fechas-container {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 15px;
+            height: 100%;
+        }
+        
+        .subseccion {
+            background-color: #d9e6f2;
+            border-radius: 6px;
+            padding: 1rem;
+        }
+        
+        .subseccion h3 {
+            color: #1a3a52;
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Desarrollo y Diseño Web</h1>
         <nav>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -37,65 +97,79 @@
         </nav>
     </header>
 
-    <main class="materia-container">
-        <nav class="materia-menu">
-            <ul>
-                <li><a href="#fechas">Fechas de exámenes</a></li>
-                <li><a href="#actividades">Actividades UVAs</a></li>
-                <li><a href="#bibliografia">Bibliografía</a></li>
-            </ul>
-        </nav>
-
-        <section class="materia-info">
-            <p><strong>Curso:</strong> [Nro-Curso] / <strong>Profesora:</strong> Patricia Carina Litovicius</p>
+    <main class="pagina-materia">
+        <div class="titulo-materia">
+            <h1>Desarrollo y Diseño Web</h1>
+        </div>
+        
+        <!-- Sector 1: Dividido en Exámenes y Tareas -->
+        <div class="seccion">
+            <div class="fechas-container">
+                <div class="subseccion" id="examenes">
+                    <h3>Exámenes</h3>
+                    <ul>
+                        <li><strong>15/05/2025:</strong> Primer parcial (Teórico)</li>
+                        <li><strong>26/06/2025:</strong> Segundo parcial (Práctico)</li>
+                        <li><strong>10/07/2025:</strong> Recuperatorio</li>
+                    </ul>
+                </div>
+                
+                <div class="subseccion" id="tareas">
+                    <h3>Tareas Importantes</h3>
+                    <ul>
+                        <li><strong>05/05/2025:</strong> Entrega diseño inicial</li>
+                        <li><strong>20/05/2025:</strong> Presentación prototipo</li>
+                        <li><strong>10/06/2025:</strong> Entrega final proyecto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sector 2: Actividades UVAs -->
+        <div class="seccion" id="actividades">
+            <h2>Actividades UVAs</h2>
             
-            <article id="fechas">
-                <h2>Fechas de exámenes</h2>
-                <ul>
-                    <li><strong>15/05/2025:</strong> Primer parcial (Teórico)</li>
-                    <li><strong>26/06/2025:</strong> Segundo parcial (Práctico)</li>
-                    <li><strong>10/07/2025:</strong> Recuperatorio</li>
-                </ul>
-            </article>
-
-            <article id="actividades">
-                <h2>Actividades UVAs</h2>
-                <div class="uva-item">
-                    <h3>UVA 1: Cómo publicar una web en GitHub</h3>
-                    <div class="uva-links">
-                        <a href="https://www.youtube.com/watch?v=EWm7AnFVSAU" target="_blank">Ver video tutorial</a>
-                        <a href="../sobremi.html">Más información</a>
-                    </div>
+            <div class="uva-item">
+                <h3>UVA 1: Publicación en GitHub</h3>
+                <div class="uva-descripcion">
+                    <p>Aprende a publicar tu sitio web usando GitHub Pages.</p>
+                    <p><a href="https://www.youtube.com/watch?v=EWm7AnFVSAU" target="_blank">Video tutorial</a></p>
                 </div>
-                
-                <div class="uva-item">
-                    <h3>UVA 2: Diseño responsive con CSS</h3>
-                    <div class="uva-links">
-                        <a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank">Guía MDN</a>
-                        <a href="../contacto.html">Consultas</a>
-                    </div>
+            </div>
+            
+            <div class="uva-item">
+                <h3>UVA 2: Diseño Responsive</h3>
+                <div class="uva-descripcion">
+                    <p>Técnicas de diseño adaptable para diferentes dispositivos.</p>
+                    <p><a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank">Guía MDN</a> | <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid</a></p>
                 </div>
-                
-                <div class="uva-item">
-                    <h3>UVA 3: Formularios HTML</h3>
-                    <div class="uva-links">
-                        <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">Tutorial W3Schools</a>
-                        <a href="../contacto.html">Ejemplos prácticos</a>
-                    </div>
+            </div>
+            
+            <div class="uva-item">
+                <h3>UVA 3: Formularios HTML</h3>
+                <div class="uva-descripcion">
+                    <p>Creación de formularios interactivos con validación.</p>
+                    <p><a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">Tutorial W3Schools</a> | <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/input" target="_blank">Tipos de input</a></p>
                 </div>
-            </article>
-
-            <article id="bibliografia">
-                <h2>Bibliografía Oficial</h2>
-                <ul>
-                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
-                    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
-                    <li><a href="https://www.w3.org/TR/html52/" target="_blank">W3C HTML 5.2 Specification</a></li>
-                    <li><a href="https://www.w3.org/TR/CSS/" target="_blank">W3C CSS Specifications</a></li>
-                    <li>HTML & CSS: Design and Build Websites - Jon Duckett</li>
-                </ul>
-            </article>
-        </section>
+            </div>
+        </div>
+        
+        <!-- Sector 3: Bibliografía -->
+        <div class="seccion" id="bibliografia">
+            <h2>Bibliografía</h2>
+            <ul>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">HTML - MDN Web Docs</a></li>
+                <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">CSS - MDN Web Docs</a></li>
+                <li><a href="https://www.w3.org/TR/html52/" target="_blank">HTML 5.2 Specification</a></li>
+                <li><a href="https://www.w3.org/TR/CSS/" target="_blank">CSS Specifications</a></li>
+            </ul>
+        </div>
+        
+        <!-- Sector 4 eliminado según solicitud -->
+        
+        <div class="info-curso">
+            <p><strong>Curso:</strong> [Nro-Curso] | <strong>Profesora:</strong> Patricia Carina Litovicius</p>
+        </div>
     </main>
 
     <footer>
