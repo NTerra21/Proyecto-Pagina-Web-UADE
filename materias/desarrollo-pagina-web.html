@@ -5,10 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo de Página Web</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .uva-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        .uva-links a {
+            background-color: #2a5c82;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .uva-links a:hover {
+            background-color: #1a3a52;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Desarrollo de Página Web</h1>
+        <h1>Desarrollo y Diseño Web</h1>
         <nav>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
@@ -34,28 +52,47 @@
             <article id="fechas">
                 <h2>Fechas de exámenes</h2>
                 <ul>
-                    <li><strong>15/05/2025:</strong> Primer parcial</li>
-                    <li><strong>26/06/2025:</strong> Segundo parcial</li>
+                    <li><strong>15/05/2025:</strong> Primer parcial (Teórico)</li>
+                    <li><strong>26/06/2025:</strong> Segundo parcial (Práctico)</li>
                     <li><strong>10/07/2025:</strong> Recuperatorio</li>
                 </ul>
             </article>
 
             <article id="actividades">
                 <h2>Actividades UVAs</h2>
-                <ul>
-                    <li><a href="#" target="_blank">UVA 1 - Repositorio</a></li>
-                    <li><a href="#" target="_blank">UVA 1 - GitHub Pages</a></li>
-                    <li><a href="#" target="_blank">UVA 2 - Repositorio</a></li>
-                    <li><a href="#" target="_blank">UVA 2 - GitHub Pages</a></li>
-                </ul>
+                <div class="uva-item">
+                    <h3>UVA 1: Cómo publicar una web en GitHub</h3>
+                    <div class="uva-links">
+                        <a href="https://www.youtube.com/watch?v=EWm7AnFVSAU" target="_blank">Ver video tutorial</a>
+                        <a href="../sobremi.html">Más información</a>
+                    </div>
+                </div>
+                
+                <div class="uva-item">
+                    <h3>UVA 2: Diseño responsive con CSS</h3>
+                    <div class="uva-links">
+                        <a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank">Guía MDN</a>
+                        <a href="../contacto.html">Consultas</a>
+                    </div>
+                </div>
+                
+                <div class="uva-item">
+                    <h3>UVA 3: Formularios HTML</h3>
+                    <div class="uva-links">
+                        <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">Tutorial W3Schools</a>
+                        <a href="../contacto.html">Ejemplos prácticos</a>
+                    </div>
+                </div>
             </article>
 
             <article id="bibliografia">
-                <h2>Bibliografía</h2>
+                <h2>Bibliografía Oficial</h2>
                 <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+                    <li><a href="https://www.w3.org/TR/html52/" target="_blank">W3C HTML 5.2 Specification</a></li>
+                    <li><a href="https://www.w3.org/TR/CSS/" target="_blank">W3C CSS Specifications</a></li>
                     <li>HTML & CSS: Design and Build Websites - Jon Duckett</li>
-                    <li>Learning Web Design - Jennifer Robbins</li>
-                    <li>MDN Web Docs (online)</li>
                 </ul>
             </article>
         </section>
