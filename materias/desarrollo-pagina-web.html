@@ -46,6 +46,48 @@
             margin-top: 1rem;
         }
         
+        .fechas-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .subseccion {
+            background-color: #d9e6f2;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .subseccion:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .subseccion h3 {
+            color: #1a3a52;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #1a3a52;
+            padding-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+        
+        .subseccion ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .subseccion ul li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #ccc;
+            font-size: 0.95rem;
+        }
+
+        .subseccion ul li:last-child {
+            border-bottom: none;
+        }
+        
         .uva-item {
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
@@ -65,23 +107,26 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
-        
-        .fechas-container {
-            display: grid;
-            grid-template-rows: auto auto;
-            gap: 15px;
-            height: 100%;
+
+        .seccion-actividades {
+            display: flex;
+            flex-direction: column;
+            background-color: #e9f2f9;
         }
         
-        .subseccion {
-            background-color: #d9e6f2;
-            border-radius: 6px;
-            padding: 1rem;
+        .actividades-contenido {
+            flex: 1;
+            overflow-y: auto;
         }
-        
-        .subseccion h3 {
-            color: #1a3a52;
-            margin-top: 0;
+
+        @media (max-width: 768px) {
+            .pagina-materia {
+                grid-template-columns: 1fr;
+            }
+            
+            .seccion {
+                grid-column: 1;
+            }
         }
     </style>
 </head>
@@ -90,6 +135,7 @@
         <nav>
             <ul>
                 <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../avisos.html">Avisos</a></li>
                 <li><a href="../sobremi.html">Sobre Mí</a></li>
                 <li><a href="../materias2025.html">Materias 2025</a></li>
                 <li><a href="../contacto.html">Contacto</a></li>
@@ -104,6 +150,7 @@
         
         <!-- Sector 1: Dividido en Exámenes y Tareas -->
         <div class="seccion">
+            <h2>Fechas</h2>
             <div class="fechas-container">
                 <div class="subseccion" id="examenes">
                     <h3>Exámenes</h3>
@@ -126,30 +173,31 @@
         </div>
         
         <!-- Sector 2: Actividades UVAs -->
-        <div class="seccion" id="actividades">
+        <div class="seccion seccion-actividades" id="actividades">
             <h2>Actividades UVAs</h2>
-            
-            <div class="uva-item">
-                <h3>UVA 1: Publicación en GitHub</h3>
-                <div class="uva-descripcion">
-                    <p>Aprende a publicar tu sitio web usando GitHub Pages.</p>
-                    <p><a href="https://www.youtube.com/watch?v=EWm7AnFVSAU" target="_blank">Video tutorial</a></p>
+            <div class="actividades-contenido">
+                <div class="uva-item">
+                    <h3>UVA 1: Publicación en GitHub</h3>
+                    <div class="uva-descripcion">
+                        <p>Aprende a publicar tu sitio web usando GitHub Pages.</p>
+                        <p><a href="https://www.youtube.com/watch?v=EWm7AnFVSAU" target="_blank">Video tutorial</a></p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="uva-item">
-                <h3>UVA 2: Diseño Responsive</h3>
-                <div class="uva-descripcion">
-                    <p>Técnicas de diseño adaptable para diferentes dispositivos.</p>
-                    <p><a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank">Guía MDN</a> | <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid</a></p>
+                
+                <div class="uva-item">
+                    <h3>UVA 2: Diseño Responsive</h3>
+                    <div class="uva-descripcion">
+                        <p>Técnicas de diseño adaptable para diferentes dispositivos.</p>
+                        <p><a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank">Guía MDN</a> | <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid</a></p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="uva-item">
-                <h3>UVA 3: Formularios HTML</h3>
-                <div class="uva-descripcion">
-                    <p>Creación de formularios interactivos con validación.</p>
-                    <p><a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">Tutorial W3Schools</a> | <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/input" target="_blank">Tipos de input</a></p>
+                
+                <div class="uva-item">
+                    <h3>UVA 3: Formularios HTML</h3>
+                    <div class="uva-descripcion">
+                        <p>Creación de formularios interactivos con validación.</p>
+                        <p><a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">Tutorial W3Schools</a> | <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/input" target="_blank">Tipos de input</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,7 +213,7 @@
             </ul>
         </div>
     </main>
-    
+
     <footer>
         <p><strong>Curso:</strong> [Nro-Curso] | <strong>Profesora:</strong> Patricia Carina Litovicius</p>
     </footer>
