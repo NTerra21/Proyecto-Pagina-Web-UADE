@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avisos Importantes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #2a5c82;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #1a3a52;
+        }
+        .pagina-avisos {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .titulo-avisos {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .titulo-avisos h1 {
+            color: #2a5c82;
+            margin-bottom: 0.5rem;
+        }
+        .titulo-avisos p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .aviso {
+            background-color: #e9f2f9;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .aviso:hover {
+            transform: translateY(-4px);
+        }
+        .aviso-fecha {
+            font-weight: bold;
+            color: #2a5c82;
+        }
+        .aviso-detalle {
+            margin-top: 0.5rem;
+        }
+        .aviso-detalle a {
+            color: #2a5c82;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .aviso-detalle a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #2a5c82;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="avisos.html" class="active" >Avisos</a></li>
+                <li><a href="sobremi.html">Sobre Mí</a></li>
+                <li><a href="materias2025.html">Materias 2025</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-avisos">
+        <div class="titulo-avisos">
+            <h1>Avisos Importantes</h1>
+            <p>Fechas próximas de exámenes y tareas</p>
+        </div>
+
+        <!-- Avisos ordenados -->
+        <div class="aviso">
+            <div class="aviso-fecha">05/05/2025</div>
+            <div class="aviso-detalle">
+                <a href="desarrollo-pagina-web.html">UVA 1: Publicación en GitHub (Página Web)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">10/05/2025</div>
+            <div class="aviso-detalle">
+                <a href="programacion.html">UVA 1: Implementación de lista enlazada (Programación)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">15/05/2025</div>
+            <div class="aviso-detalle">
+                <a href="desarrollo-pagina-web.html">Primer parcial (Teórico) (Página Web)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">20/05/2025</div>
+            <div class="aviso-detalle">
+                <a href="desarrollo-pagina-web.html">UVA 2: Diseño Responsive (Página Web)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">22/05/2025</div>
+            <div class="aviso-detalle">
+                <a href="programacion.html">Parcial teórico-práctico (Programación)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">24/05/2025</div>
+            <div class="aviso-detalle">
+                <a href="programacion.html">UVA 2: Sistema con patrones de diseño (Programación)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">10/06/2025</div>
+            <div class="aviso-detalle">
+                <a href="desarrollo-pagina-web.html">UVA 3: Formularios HTML (Página Web)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">21/06/2025</div>
+            <div class="aviso-detalle">
+                <a href="programacion.html">UVA 3: Proyecto final con interfaz gráfica (Programación)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">26/06/2025</div>
+            <div class="aviso-detalle">
+                <a href="desarrollo-pagina-web.html">Segundo parcial (Práctico) (Página Web)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">03/07/2025</div>
+            <div class="aviso-detalle">
+                <a href="programacion.html">Examen integrador (Programación)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">10/07/2025</div>
+            <div class="aviso-detalle">
+                <a href="desarrollo-pagina-web.html">Recuperatorio (Página Web)</a>
+            </div>
+        </div>
+
+        <div class="aviso">
+            <div class="aviso-fecha">17/07/2025</div>
+            <div class="aviso-detalle">
+                <a href="programacion.html">Recuperatorio (Programación)</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Curso 2025 | Portal de Avisos</p>
+    </footer>
+</body>
+</html>

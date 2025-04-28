@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis Matemático</title>
+    <title>Programación 2</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         /* Estilos específicos para esta página */
         .pagina-materia {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto auto auto;
+            grid-template-rows: auto 1fr 1fr;
             gap: 20px;
             max-width: 1200px;
             margin: 2rem auto;
@@ -68,17 +68,6 @@
         .subseccion ul li:last-child {
             border-bottom: none;
         }
-        .seccion-actividades {
-            grid-column: 2;
-            grid-row: 2 / span 2;
-            display: flex;
-            flex-direction: column;
-            background-color: #e9f2f9;
-        }
-        .actividades-contenido {
-            flex: 1;
-            overflow-y: auto;
-        }
         .uva-item {
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
@@ -95,11 +84,20 @@
             font-size: 0.95rem;
             line-height: 1.5;
         }
+        .seccion-actividades {
+            display: flex;
+            flex-direction: column;
+            background-color: #e9f2f9;
+        }
+        .actividades-contenido {
+            flex: 1;
+            overflow-y: auto;
+        }
         @media (max-width: 768px) {
             .pagina-materia {
                 grid-template-columns: 1fr;
             }
-            .seccion, .seccion-actividades {
+            .seccion {
                 grid-column: 1;
             }
         }
@@ -120,72 +118,78 @@
 
     <main class="pagina-materia">
         <div class="titulo-materia">
-            <h1>Análisis Matemático</h1>
+            <h1>Programación 2</h1>
         </div>
 
         <!-- Fechas -->
-        <div class="seccion seccion-grande">
+        <div class="seccion">
             <h2>Fechas</h2>
             <div class="fechas-container">
                 <div class="subseccion" id="examenes">
                     <h3>Exámenes</h3>
                     <ul>
-                        <li><strong>18/05/2025:</strong> Primer parcial (Unidades 1-3)</li>
-                        <li><strong>29/06/2025:</strong> Segundo parcial (Unidades 4-6)</li>
-                        <li><strong>13/07/2025:</strong> Recuperatorio</li>
+                        <li><strong>22/05/2025:</strong> Parcial teórico-práctico</li>
+                        <li><strong>03/07/2025:</strong> Examen integrador</li>
+                        <li><strong>17/07/2025:</strong> Recuperatorio</li>
                     </ul>
                 </div>
+
                 <div class="subseccion" id="tareas">
-                    <h3>Entregas</h3>
+                    <h3>Tareas Importantes</h3>
                     <ul>
-                        <li><strong>08/05/2025:</strong> UVA 1: Límites y Continuidad</li>
-                        <li><strong>22/05/2025:</strong> UVA 2: Derivadas</li>
+                        <li><strong>10/05/2025:</strong> UVA 1: Implementación de lista enlazada</li>
+                        <li><strong>24/05/2025:</strong> UVA 2: Sistema con patrones de diseño</li>
+                        <li><strong>21/06/2025:</strong> UVA 3: Proyecto final con interfaz gráfica</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Actividades -->
-        <div class="seccion seccion-actividades">
-            <h2>Actividades</h2>
+        <!-- Actividades UVAs -->
+        <div class="seccion seccion-actividades" id="actividades">
+            <h2>Actividades UVAs</h2>
             <div class="actividades-contenido">
                 <div class="uva-item">
-                    <h3>UVA 1: Límites y Continuidad</h3>
+                    <h3>UVA 1: Implementación de lista enlazada</h3>
                     <div class="uva-descripcion">
-                        <p>Estudio de límites funcionales y continuidad. Aplicaciones prácticas.</p>
-                        <p><strong>Recursos:</strong> 
-                            <a href="https://es.khanacademy.org/math/calculus-1" target="_blank">Khan Academy</a> | 
-                            <a href="https://www.geogebra.org/m/z8s6qk9v" target="_blank">Visualización GeoGebra</a>
-                        </p>
+                        <p>Desarrollo de una lista enlazada en Java con operaciones básicas (inserción, eliminación, búsqueda).</p>
+                        <p><a href="https://www.geeksforgeeks.org/linked-list-in-java/" target="_blank">Tutorial listas enlazadas</a> | 
+                        <a href="https://www.javatpoint.com/java-linkedlist" target="_blank">Implementación en Java</a></p>
                     </div>
                 </div>
                 <div class="uva-item">
-                    <h3>UVA 2: Derivadas</h3>
+                    <h3>UVA 2: Sistema con patrones de diseño</h3>
                     <div class="uva-descripcion">
-                        <p>Concepto de derivada, reglas de derivación y aplicaciones.</p>
-                        <p><strong>Recursos:</strong> 
-                            <a href="https://www.derivative-calculator.net/" target="_blank">Calculadora de derivadas</a> | 
-                            <a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a>
-                        </p>
+                        <p>Aplicación de patrones Singleton, Factory y Observer en un sistema práctico.</p>
+                        <p><a href="https://refactoring.guru/es/design-patterns" target="_blank">Guía de patrones</a> | 
+                        <a href="https://github.com/iluwatar/java-design-patterns" target="_blank">Ejemplos en GitHub</a></p>
+                    </div>
+                </div>
+                <div class="uva-item">
+                    <h3>UVA 3: Proyecto final con interfaz gráfica</h3>
+                    <div class="uva-descripcion">
+                        <p>Desarrollo de una aplicación con interfaz gráfica utilizando Java Swing o JavaFX.</p>
+                        <p><a href="https://docs.oracle.com/javase/tutorial/uiswing/" target="_blank">Java Swing Tutorial</a> | 
+                        <a href="https://openjfx.io/" target="_blank">JavaFX Documentation</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Bibliografía -->
-        <div class="seccion seccion-grande" id="bibliografia">
+        <div class="seccion" id="bibliografia">
             <h2>Bibliografía</h2>
             <ul>
-                <li><strong>Texto base:</strong> "Cálculo de una variable" - James Stewart</li>
-                <li><strong>Complementario:</strong> "Cálculo diferencial e integral" - Granville</li>
-                <li><strong>Práctico:</strong> "Problemas de cálculo" - Demidovich</li>
-                <li><strong>Recursos online:</strong> <a href="https://www.math3d.org/" target="_blank">Visualizaciones 3D</a></li>
+                <li><a href="https://www.pearson.com/en-us/subject-catalog/p/java-how-to-program-early-objects/P200000003218/9780137554767" target="_blank">Java: How to Program - Deitel</a></li>
+                <li><a href="https://www.oreilly.com/library/view/data-structures-and/9781118771334/" target="_blank">Data Structures and Algorithms - Goodrich</a></li>
+                <li><a href="https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/" target="_blank">Effective Java - Joshua Bloch</a></li>
+                <li><a href="https://codingbat.com/java" target="_blank">Ejercicios prácticos en CodingBat</a></li>
             </ul>
         </div>
     </main>
 
     <footer>
-        <p><strong>Curso:</strong> 509512 | <strong>Profesor:</strong> Dr. Carlos Fernández</p>
+        <p><strong>Curso:</strong> 509498 | <strong>Profesor:</strong> Mg. Alejandro Soto</p>
     </footer>
 </body>
 </html>
