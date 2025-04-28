@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Estilos específicos para esta página */
+        .pagina-materia {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .titulo-materia {
+            grid-column: 1 / 3;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .seccion {
+            background-color: #e9f2f9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .seccion h2 {
+            color: #2a5c82;
+            border-bottom: 2px solid #2a5c82;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        .fechas-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .subseccion {
+            background-color: #d9e6f2;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .subseccion:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .subseccion h3 {
+            color: #1a3a52;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #1a3a52;
+            padding-bottom: 0.3rem;
+            font-size: 1.2rem;
+        }
+        .subseccion ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .subseccion ul li {
+            padding: 0.4rem 0;
+            border-bottom: 1px dashed #ccc;
+            font-size: 0.95rem;
+        }
+        .subseccion ul li:last-child {
+            border-bottom: none;
+        }
+        .seccion-actividades {
+            grid-column: 2;
+            grid-row: 2 / span 2;
+            display: flex;
+            flex-direction: column;
+            background-color: #e9f2f9;
+        }
+        .actividades-contenido {
+            flex: 1;
+            overflow-y: auto;
+        }
+        .uva-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #ccc;
+        }
+        .uva-item:last-child {
+            border-bottom: none;
+        }
+        .uva-item h3 {
+            color: #1a3a52;
+            margin-bottom: 0.5rem;
+        }
+        .uva-descripcion {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .pagina-materia {
+                grid-template-columns: 1fr;
+            }
+            .seccion, .seccion-actividades {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../avisos.html">Avisos</a></li>
+                <li><a href="../sobremi.html">Sobre Mí</a></li>
+                <li><a href="../materias2025.html">Materias 2025</a></li>
+                <li><a href="../contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina-materia">
+        <div class="titulo-materia">
+            <h1>Sistemas Operativos II</h1>
+        </div>
+
+        <!-- Fechas -->
+        <div class="seccion seccion-grande">
+            <h2>Fechas</h2>
+            <div class="fechas-container">
+                <div class="subseccion" id="examenes">
+                    <h3>Exámenes</h3>
+                    <ul>
+                        <li><strong>18/05/2025:</strong> Parcial 1 - Teoría</li>
+                        <li><strong>29/06/2025:</strong> Parcial 2 - Práctico</li>
+                        <li><strong>13/07/2025:</strong> Recuperatorio</li>
+                    </ul>
+                </div>
+                <div class="subseccion" id="tareas">
+                    <h3>Tareas Importantes</h3>
+                    <ul>
+                        <li><strong>08/05/2025:</strong> UVA 1: Gestión de Procesos</li>
+                        <li><strong>22/05/2025:</strong> UVA 2: Administración de Memoria</li>
+                        <li><strong>12/06/2025:</strong> UVA 3: Sistemas de Archivos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actividades -->
+        <div class="seccion seccion-actividades">
+            <h2>Actividades</h2>
+            <div class="actividades-contenido">
+                <div class="uva-item">
+                    <h3>UVA 1: Gestión de Procesos</h3>
+                    <div class="uva-descripcion">
+                        <p>Simulación de planificación de procesos usando diferentes algoritmos (FCFS, SJF, Round Robin).</p>
+                        <p><strong>Recursos:</strong> 
+                            <a href="https://es.wikipedia.org/wiki/Planificaci%C3%B3n_de_procesos" target="_blank">Conceptos básicos</a> | 
+                            <a href="https://www.guru99.com/process-scheduling.html" target="_blank">Algoritmos</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="uva-item">
+                    <h3>UVA 2: Administración de Memoria</h3>
+                    <div class="uva-descripcion">
+                        <p>Implementación de estrategias de asignación de memoria (paginación, segmentación).</p>
+                        <p><strong>Recursos:</strong> 
+                            <a href="https://www.tutorialspoint.com/operating_system/os_memory_management.htm" target="_blank">Gestión de memoria</a> | 
+                            <a href="https://www.geeksforgeeks.org/paging-in-operating-system/" target="_blank">Paginación</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="uva-item">
+                    <h3>UVA 3: Sistemas de Archivos</h3>
+                    <div class="uva-descripcion">
+                        <p>Diseño e implementación de un sistema de archivos básico.</p>
+                        <p><strong>Recursos:</strong> 
+                            <a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/10_FileSystems.html" target="_blank">Sistemas de archivos</a> | 
+                            <a href="https://opensource.com/article/19/6/how-filesystems-work" target="_blank">Cómo funcionan</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bibliografía -->
+        <div class="seccion seccion-grande" id="bibliografia">
+            <h2>Bibliografía</h2>
+            <ul>
+                <li><strong>Libro principal:</strong> "Operating System Concepts" - Silberschatz, Galvin, Gagne</li>
+                <li><strong>Teoría:</strong> <a href="https://www.os-book.com/" target="_blank">Sitio web del libro</a></li>
+                <li><strong>Prácticas:</strong> <a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/" target="_blank">Notas de curso</a></li>
+                <li><strong>Referencia:</strong> <a href="https://www.tutorialspoint.com/operating_system/index.htm" target="_blank">TutorialsPoint</a></li>
+                <li><strong>Avanzado:</strong> "Modern Operating Systems" - Andrew S. Tanenbaum</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>Curso:</strong> 509495 | <strong>Profesor:</strong> Dr. Carlos Fernández Rivas</p>
+    </footer>
+</body>
+</html>
