@@ -1,195 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación 2</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* Estilos específicos para esta página */
-        .pagina-materia {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: auto 1fr 1fr;
-            gap: 20px;
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .titulo-materia {
-            grid-column: 1 / 3;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        .seccion {
-            background-color: #e9f2f9;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .seccion h2 {
-            color: #2a5c82;
-            border-bottom: 2px solid #2a5c82;
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-        .fechas-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .subseccion {
-            background-color: #d9e6f2;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        .subseccion:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .subseccion h3 {
-            color: #1a3a52;
-            margin-bottom: 0.8rem;
-            border-bottom: 1px solid #1a3a52;
-            padding-bottom: 0.3rem;
-            font-size: 1.2rem;
-        }
-        .subseccion ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .subseccion ul li {
-            padding: 0.4rem 0;
-            border-bottom: 1px dashed #ccc;
-            font-size: 0.95rem;
-        }
-        .subseccion ul li:last-child {
-            border-bottom: none;
-        }
-        .uva-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed #ccc;
-        }
-        .uva-item:last-child {
-            border-bottom: none;
-        }
-        .uva-item h3 {
-            color: #1a3a52;
-            margin-bottom: 0.5rem;
-        }
-        .uva-descripcion {
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        .seccion-actividades {
-            display: flex;
-            flex-direction: column;
-            background-color: #e9f2f9;
-        }
-        .actividades-contenido {
-            flex: 1;
-            overflow-y: auto;
-        }
-        @media (max-width: 768px) {
-            .pagina-materia {
-                grid-template-columns: 1fr;
-            }
-            .seccion {
-                grid-column: 1;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programación 2</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link id="tema-oscuro" rel="stylesheet" href="" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../avisos.html">Avisos</a></li>
-                <li><a href="../sobremi.html">Sobre Mí</a></li>
-                <li><a href="../materias2025.html">Materias 2025</a></li>
-                <li><a href="../contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
-    <main class="pagina-materia">
-        <div class="titulo-materia">
-            <h1>Programación 2</h1>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../avisos.html">Avisos</a></li>
+        <li><a href="../sobremi.html">Sobre Mí</a></li>
+        <li><a href="../materias2025.html">Materias 2025</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="pagina-materia">
+    <div class="titulo-materia">
+      <h1>Programación 2</h1>
+    </div>
+
+    <div class="seccion">
+      <h2>Fechas</h2>
+      <div class="fechas-container">
+        <div class="subseccion">
+          <h3>Exámenes</h3>
+          <ul>
+            <li><strong>22/05/2025:</strong> Parcial teórico-práctico</li>
+            <li><strong>03/07/2025:</strong> Examen integrador</li>
+            <li><strong>17/07/2025:</strong> Recuperatorio</li>
+          </ul>
         </div>
-
-        <!-- Fechas -->
-        <div class="seccion">
-            <h2>Fechas</h2>
-            <div class="fechas-container">
-                <div class="subseccion" id="examenes">
-                    <h3>Exámenes</h3>
-                    <ul>
-                        <li><strong>22/05/2025:</strong> Parcial teórico-práctico</li>
-                        <li><strong>03/07/2025:</strong> Examen integrador</li>
-                        <li><strong>17/07/2025:</strong> Recuperatorio</li>
-                    </ul>
-                </div>
-
-                <div class="subseccion" id="tareas">
-                    <h3>Tareas Importantes</h3>
-                    <ul>
-                        <li><strong>10/05/2025:</strong> UVA 1: Implementación de lista enlazada</li>
-                        <li><strong>24/05/2025:</strong> UVA 2: Sistema con patrones de diseño</li>
-                        <li><strong>21/06/2025:</strong> UVA 3: Proyecto final con interfaz gráfica</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="subseccion">
+          <h3>Tareas Importantes</h3>
+          <ul>
+            <li><strong>10/05/2025:</strong> UVA 1: Implementación de lista enlazada</li>
+            <li><strong>24/05/2025:</strong> UVA 2: Sistema con patrones de diseño</li>
+            <li><strong>21/06/2025:</strong> UVA 3: Proyecto final con interfaz gráfica</li>
+          </ul>
         </div>
+      </div>
+    </div>
 
-        <!-- Actividades UVAs -->
-        <div class="seccion seccion-actividades" id="actividades">
-            <h2>Actividades UVAs</h2>
-            <div class="actividades-contenido">
-                <div class="uva-item">
-                    <h3>UVA 1: Implementación de lista enlazada</h3>
-                    <div class="uva-descripcion">
-                        <p>Desarrollo de una lista enlazada en Java con operaciones básicas (inserción, eliminación, búsqueda).</p>
-                        <p><a href="https://www.geeksforgeeks.org/linked-list-in-java/" target="_blank">Tutorial listas enlazadas</a> | 
-                        <a href="https://www.javatpoint.com/java-linkedlist" target="_blank">Implementación en Java</a></p>
-                    </div>
-                </div>
-                <div class="uva-item">
-                    <h3>UVA 2: Sistema con patrones de diseño</h3>
-                    <div class="uva-descripcion">
-                        <p>Aplicación de patrones Singleton, Factory y Observer en un sistema práctico.</p>
-                        <p><a href="https://refactoring.guru/es/design-patterns" target="_blank">Guía de patrones</a> | 
-                        <a href="https://github.com/iluwatar/java-design-patterns" target="_blank">Ejemplos en GitHub</a></p>
-                    </div>
-                </div>
-                <div class="uva-item">
-                    <h3>UVA 3: Proyecto final con interfaz gráfica</h3>
-                    <div class="uva-descripcion">
-                        <p>Desarrollo de una aplicación con interfaz gráfica utilizando Java Swing o JavaFX.</p>
-                        <p><a href="https://docs.oracle.com/javase/tutorial/uiswing/" target="_blank">Java Swing Tutorial</a> | 
-                        <a href="https://openjfx.io/" target="_blank">JavaFX Documentation</a></p>
-                    </div>
-                </div>
-            </div>
+    <div class="seccion seccion-actividades">
+      <h2>Actividades UVAs</h2>
+      <div class="actividades-contenido">
+        <div class="uva-item">
+          <h3>UVA 1: Implementación de lista enlazada</h3>
+          <div class="uva-descripcion">
+            <p>Desarrollo de una lista enlazada en Java con operaciones básicas.</p>
+            <p><a href="https://www.geeksforgeeks.org/linked-list-in-java/" target="_blank">Tutorial</a> | 
+               <a href="https://www.javatpoint.com/java-linkedlist" target="_blank">Javatpoint</a></p>
+          </div>
         </div>
-
-        <!-- Bibliografía -->
-        <div class="seccion" id="bibliografia">
-            <h2>Bibliografía</h2>
-            <ul>
-                <li><a href="https://www.pearson.com/en-us/subject-catalog/p/java-how-to-program-early-objects/P200000003218/9780137554767" target="_blank">Java: How to Program - Deitel</a></li>
-                <li><a href="https://www.oreilly.com/library/view/data-structures-and/9781118771334/" target="_blank">Data Structures and Algorithms - Goodrich</a></li>
-                <li><a href="https://www.oreilly.com/library/view/effective-java-3rd/9780134686097/" target="_blank">Effective Java - Joshua Bloch</a></li>
-                <li><a href="https://codingbat.com/java" target="_blank">Ejercicios prácticos en CodingBat</a></li>
-            </ul>
+        <div class="uva-item">
+          <h3>UVA 2: Sistema con patrones de diseño</h3>
+          <div class="uva-descripcion">
+            <p>Uso de Singleton, Factory y Observer en un sistema práctico.</p>
+            <p><a href="https://refactoring.guru/es/design-patterns" target="_blank">Guía</a> | 
+               <a href="https://github.com/iluwatar/java-design-patterns" target="_blank">Ejemplos</a></p>
+          </div>
         </div>
-    </main>
+        <div class="uva-item">
+          <h3>UVA 3: Proyecto final con interfaz gráfica</h3>
+          <div class="uva-descripcion">
+            <p>Desarrollo con Java Swing o JavaFX.</p>
+            <p><a href="https://docs.oracle.com/javase/tutorial/uiswing/" target="_blank">Swing</a> | 
+               <a href="https://openjfx.io/" target="_blank">JavaFX</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-        <p><strong>Curso:</strong> 509498 | <strong>Profesor:</strong> Mg. Alejandro Soto</p>
-    </footer>
+    <div class="seccion">
+      <h2>Bibliografía</h2>
+      <ul>
+        <li>Java: How to Program - Deitel</li>
+        <li>Effective Java - Joshua Bloch</li>
+        <li>Data Structures - Goodrich</li>
+        <li><a href="https://codingbat.com/java" target="_blank">Ejercicios prácticos</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Curso:</strong> 509498 | <strong>Profesor:</strong> Mg. Alejandro Soto</p>
+  </footer>
+
+  <script>
+    const linkOscuro = document.getElementById('tema-oscuro');
+    const btn = document.getElementById('modoOscuroBtn');
+
+    if (localStorage.getItem('modoOscuro') === 'true') {
+      linkOscuro.href = '../css/oscuro.css';
+    }
+
+    btn.addEventListener('click', function () {
+      if (linkOscuro.href.includes('oscuro.css')) {
+        linkOscuro.href = '';
+        localStorage.setItem('modoOscuro', 'false');
+      } else {
+        linkOscuro.href = '../css/oscuro.css';
+        localStorage.setItem('modoOscuro', 'true');
+      }
+    });
+  </script>
 </body>
 </html>

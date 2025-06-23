@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Mí</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Mí</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link id="tema-oscuro" rel="stylesheet" href="" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .perfil-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .foto-perfil {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      object-fit: cover;
+      border: 3px solid #2a5c82;
+    }
+
+    .info-personal {
+      max-width: 500px;
+    }
+
+    .info-personal h2 {
+      color: #2a5c82;
+      margin-bottom: 1rem;
+    }
+
+    .info-personal p {
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Sobre Mí</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="avisos.html">Avisos</a></li>
-                <li><a href="sobremi.html" class="active">Sobre Mí</a></li>
-                <li><a href="materias2025.html">Materias 2025</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
-    <main class="perfil-container">
-        <img src="img/perfil.jpg" alt="Foto de perfil de Nicolás Terradas" class="foto-perfil">
-        
-        <section class="info-personal">
-            <h2>Nicolás Terradas</h2>
-            <p><strong>Carrera:</strong> Licenciatura en Gestión de la Tecnología e Información</p>
-            <p><strong>Formación adicional:</strong> Técnico electromecánico</p>
-            <p><strong>Intereses:</strong> Músico baterista con 16 años de experiencia</p>
-        </section>
-    </main>
+  <header>
+    <h1>Sobre Mí</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="avisos.html">Avisos</a></li>
+        <li><a href="sobremi.html" class="active">Sobre Mí</a></li>
+        <li><a href="materias2025.html">Materias 2025</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
-    </footer>
+  <main class="perfil-container">
+    <img src="img/perfil.jpg" alt="Foto de perfil de Nicolás Terradas" class="foto-perfil" />
+
+    <section class="info-personal">
+      <h2>Nicolás Terradas</h2>
+      <p><strong>Carrera:</strong> Licenciatura en Gestión de la Tecnología e Información</p>
+      <p><strong>Formación adicional:</strong> Técnico electromecánico</p>
+      <p><strong>Intereses:</strong> Músico baterista con 16 años de experiencia, entusiasta de la tecnología, programación y diseño web.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
+  </footer>
+
+  <script>
+    const linkOscuro = document.getElementById('tema-oscuro');
+    const btn = document.getElementById('modoOscuroBtn');
+
+    if (localStorage.getItem('modoOscuro') === 'true') {
+      linkOscuro.href = 'css/oscuro.css';
+    }
+
+    btn.addEventListener('click', function () {
+      if (linkOscuro.href.includes('oscuro.css')) {
+        linkOscuro.href = '';
+        localStorage.setItem('modoOscuro', 'false');
+      } else {
+        linkOscuro.href = 'css/oscuro.css';
+        localStorage.setItem('modoOscuro', 'true');
+      }
+    });
+  </script>
 </body>
 </html>

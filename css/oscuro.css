@@ -1,5 +1,3 @@
-/* css/oscuro.css */
-
 body {
   background-color: #121212 !important;
   color: #f0f0f0 !important;
@@ -37,4 +35,35 @@ tr:hover td {
 /* Footer logo en modo oscuro */
 footer img {
   filter: brightness(90%) contrast(110%);
+}
+
+/* === Modo oscuro para materias === */
+.seccion,
+.seccion-actividades,
+.subseccion,
+.uva-item {
+  background-color: #1f1f1f !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #444;
+}
+
+.subseccion h3,
+.uva-item h3 {
+  color: #a8d0ff !important;
+  border-bottom: 1px solid #555;
+}
+
+.uva-descripcion a,
+.subseccion a {
+  color: #a8d0ff !important;
+  text-decoration: underline;
+}
+
+.subseccion ul li {
+  border-bottom: 1px dashed #555;
+}
+
+/* Bibliografía en modo oscuro */
+#bibliografia ul li {
+  color: #ddd;
 }

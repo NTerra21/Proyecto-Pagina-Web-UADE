@@ -1,124 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avisos Importantes</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        header {
-            background-color: #2a5c82;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0.86rem;
-            padding-bottom: 0;
-        }
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-        nav ul li a:hover {
-            background-color: #1a3a52;
-        }
-        nav ul li a.active {
-            background-color: #1a3a52;
-        }
-        .pagina-avisos {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        .titulo-avisos {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .titulo-avisos h2 {
-            color: #2a5c82;
-            margin-bottom: 0.5rem;
-        }
-        .titulo-avisos p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        .aviso {
-            background-color: #e9f2f9;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-        .aviso:hover {
-            transform: translateY(-4px);
-        }
-        .aviso-fecha {
-            font-weight: bold;
-            color: #2a5c82;
-        }
-        .aviso-detalle {
-            margin-top: 0.5rem;
-        }
-        .aviso-detalle a {
-            color: #2a5c82;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .aviso-detalle a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #2a5c82;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avisos Importantes</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link id="tema-oscuro" rel="stylesheet" href="" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .pagina-avisos {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .titulo-avisos {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .titulo-avisos h2 {
+      color: #2a5c82;
+      margin-bottom: 0.5rem;
+    }
+
+    .titulo-avisos p {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .aviso {
+      background-color: #e9f2f9;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .aviso:hover {
+      transform: translateY(-4px);
+    }
+
+    .aviso-fecha {
+      font-weight: bold;
+      color: #2a5c82;
+    }
+
+    .aviso-detalle {
+      margin-top: 0.5rem;
+    }
+
+    .aviso-detalle a {
+      color: #2a5c82;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .aviso-detalle a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Avisos Importantes</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="avisos.html" class="active">Avisos</a></li>
-                <li><a href="sobremi.html">Sobre Mí</a></li>
-                <li><a href="materias2025.html">Materias 2025</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
-    <main class="pagina-avisos">
-        <div class="titulo-avisos">
-            <h2>Fechas próximas de exámenes y tareas</h2>
-            <p>Todas las fechas importantes de tus materias</p>
-        </div>
+  <header>
+    <h1>Avisos Importantes</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="avisos.html" class="active">Avisos</a></li>
+        <li><a href="sobremi.html">Sobre Mí</a></li>
+        <li><a href="materias2025.html">Materias 2025</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Avisos de Análisis Matemático -->
+  <main class="pagina-avisos">
+    <div class="titulo-avisos">
+      <h2>Fechas próximas de exámenes y tareas</h2>
+      <p>Todas las fechas importantes de tus materias</p>
+    </div>
+
+    <!-- Avisos de Análisis Matemático -->
         <div class="aviso">
             <div class="aviso-fecha">08/05/2025</div>
             <div class="aviso-detalle">
@@ -282,10 +249,29 @@
                 <a href="materias/sistemas-2.html">Recuperatorio (Sistemas 2)</a>
             </div>
         </div>
-    </main>
+  </main>
 
-    <footer>
-        <p>Curso 2025 | Portal de Avisos</p>
-    </footer>
+  <footer>
+    <p>Curso 2025 | Portal de Avisos</p>
+  </footer>
+
+  <script>
+    const linkOscuro = document.getElementById('tema-oscuro');
+    const btn = document.getElementById('modoOscuroBtn');
+
+    if (localStorage.getItem('modoOscuro') === 'true') {
+      linkOscuro.href = 'css/oscuro.css';
+    }
+
+    btn.addEventListener('click', function () {
+      if (linkOscuro.href.includes('oscuro.css')) {
+        linkOscuro.href = '';
+        localStorage.setItem('modoOscuro', 'false');
+      } else {
+        linkOscuro.href = 'css/oscuro.css';
+        localStorage.setItem('modoOscuro', 'true');
+      }
+    });
+  </script>
 </body>
 </html>

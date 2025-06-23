@@ -1,37 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materias 2025</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materias 2025</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link id="tema-oscuro" rel="stylesheet" href="" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .materias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .materia-card {
+      background-color: #e9f2f9;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .materia-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .materia-card a {
+      text-decoration: none;
+      color: #2a5c82;
+      font-weight: bold;
+    }
+
+    .materia-card a:hover {
+      text-decoration: underline;
+    }
+
+    .materias-grid h2 {
+      grid-column: 1 / -1;
+      text-align: center;
+      color: #2a5c82;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Materias 2025</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="avisos.html">Avisos</a></li>
-                <li><a href="sobremi.html">Sobre Mí</a></li>
-                <li><a href="materias2025.html" class="active">Materias 2025</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
-    <main class="materias-list">
-        <h2>Mis Materias este Cuatrimestre</h2>
-        <ul>
-            <li><a href="materias/analisis-matematico.html">Análisis Matemático</a></li>
-            <li><a href="materias/desarrollo-pagina-web.html">Desarrollo de Página Web</a></li>
-            <li><a href="materias/sistemas-2.html">Sistemas 2</a></li>
-            <li><a href="materias/programacion-2.html">Programación 2</a></li>
-        </ul>
-    </main>
+  <header>
+    <h1>Materias 2025</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="avisos.html">Avisos</a></li>
+        <li><a href="sobremi.html">Sobre Mí</a></li>
+        <li><a href="materias2025.html" class="active">Materias 2025</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
-    </footer>
+  <main class="materias-grid">
+    <h2>Mis Materias este Cuatrimestre</h2>
+
+    <div class="materia-card">
+      <a href="materias/analisis-matematico.html">Análisis Matemático</a>
+    </div>
+    <div class="materia-card">
+      <a href="materias/desarrollo-pagina-web.html">Desarrollo de Página Web</a>
+    </div>
+    <div class="materia-card">
+      <a href="materias/sistemas-2.html">Sistemas 2</a>
+    </div>
+    <div class="materia-card">
+      <a href="materias/programacion-2.html">Programación 2</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
+  </footer>
+
+  <script>
+    const linkOscuro = document.getElementById('tema-oscuro');
+    const btn = document.getElementById('modoOscuroBtn');
+
+    if (localStorage.getItem('modoOscuro') === 'true') {
+      linkOscuro.href = 'css/oscuro.css';
+    }
+
+    btn.addEventListener('click', function () {
+      if (linkOscuro.href.includes('oscuro.css')) {
+        linkOscuro.href = '';
+        localStorage.setItem('modoOscuro', 'false');
+      } else {
+        linkOscuro.href = 'css/oscuro.css';
+        localStorage.setItem('modoOscuro', 'true');
+      }
+    });
+  </script>
 </body>
 </html>
