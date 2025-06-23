@@ -2,12 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio - Organizador de Cursada</title>
+  <title>Inicio - Organizador de Cursada</title> <!-- ← Cambiar por el título correspondiente -->
 
+  <!-- Estilos centrales -->
   <link rel="stylesheet" href="css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
+
+  <!-- Librerías externas -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
   <style>
     html, body {
@@ -127,9 +133,6 @@
       z-index: 1000;
     }
 
-    .dark-button:hover {
-      background-color: #666;
-    }
 
     /* Modo oscuro para index */
     body.dark-mode {
@@ -163,6 +166,10 @@
 
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
+  <header>
+    <h1>Inicio - Organizador de Cursada</h1>
+  </header>
+
   <nav>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
@@ -174,7 +181,6 @@
   </nav>
 
   <main>
-    <h1>Bienvenido al Organizador de Cursada</h1>
     <p>Este sitio te permite llevar el control de tus materias, tareas, exámenes y más de forma clara y centralizada.</p>
 
     <table>
@@ -221,14 +227,13 @@
     </section>
   </main>
 
-    <footer>
-      <div class="footer-contenido">
-        <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
-        <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
-      </div>
-      <img src="img/UADE.png" alt="Logo UADE" />
-    </footer>
-
+  <footer>
+    <div class="footer-contenido">
+      <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+      <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+    </div>
+    <img src="img/UADE.png" alt="Logo UADE" />
+  </footer>
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
@@ -253,4 +258,3 @@
     });
   </script>
 </body>
-</html>
