@@ -1,0 +1,40 @@
+/* css/oscuro.css */
+
+body {
+  background-color: #121212 !important;
+  color: #f0f0f0 !important;
+}
+
+nav, header, footer {
+  background-color: #1e1e1e !important;
+}
+
+a {
+  color: #a8d0ff !important;
+}
+
+/* TABLAS en modo oscuro */
+table {
+  background-color: #1f1f1f !important;
+  color: #f0f0f0 !important;
+  border-color: #444 !important;
+}
+
+th {
+  background-color: #333 !important;
+  color: #f0f0f0 !important;
+}
+
+td {
+  background-color: #222 !important;
+  color: #eee !important;
+}
+
+tr:hover td {
+  background-color: #2a2a2a !important;
+}
+
+/* Footer logo en modo oscuro */
+footer img {
+  filter: brightness(90%) contrast(110%);
+}
