@@ -2,116 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sistemas 2</title>
+
   <link rel="stylesheet" href="../css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
   <header>
+    <h1>Sistemas 2</h1>
     <nav>
       <ul>
         <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../avisos.html">Avisos</a></li>
-        <li><a href="../sobremi.html">Sobre Mí</a></li>
-        <li><a href="../materias2025.html">Materias 2025</a></li>
-        <li><a href="../contacto.html">Contacto</a></li>
+        <li><a href="analisis-matematico.html">Análisis Matemático</a></li>
+        <li><a href="desarrollo-pagina-web.html">Desarrollo de Página Web</a></li>
+        <li><a href="sistemas-2.html" class="active">Sistemas 2</a></li>
+        <li><a href="programacion-2.html">Programación 2</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="pagina-materia">
-    <div class="titulo-materia">
-      <h1>Sistemas Operativos II</h1>
-    </div>
-
-    <div class="seccion">
-      <h2>Fechas</h2>
-      <div class="fechas-container">
-        <div class="subseccion">
+  <main class="contenedor-principal">
+    <div class="grid-cuadrantes">
+      <!-- Fechas -->
+      <section class="cuadrante fechas">
+        <h2>Fechas</h2>
+        <div class="bloque">
           <h3>Exámenes</h3>
           <ul>
-            <li><strong>18/05/2025:</strong> Parcial 1 - Teoría</li>
-            <li><strong>29/06/2025:</strong> Parcial 2 - Práctico</li>
-            <li><strong>13/07/2025:</strong> Recuperatorio</li>
+            <li><strong>28/08:</strong> Examen Teórico</li>
+            <li><strong>15/10:</strong> Examen Final</li>
           </ul>
         </div>
-        <div class="subseccion">
+        <div class="bloque">
           <h3>Tareas Importantes</h3>
           <ul>
-            <li><strong>08/05/2025:</strong> UVA 1: Gestión de Procesos</li>
-            <li><strong>22/05/2025:</strong> UVA 2: Administración de Memoria</li>
-            <li><strong>12/06/2025:</strong> UVA 3: Sistemas de Archivos</li>
+            <li><strong>10/08:</strong> Informe sobre arquitectura cliente-servidor</li>
+            <li><strong>05/09:</strong> Diagrama de despliegue</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="seccion seccion-actividades">
-      <h2>Actividades</h2>
-      <div class="actividades-contenido">
-        <div class="uva-item">
-          <h3>UVA 1: Gestión de Procesos</h3>
-          <div class="uva-descripcion">
-            <p>Simulación de planificación de procesos (FCFS, SJF, Round Robin).</p>
-            <p><a href="https://es.wikipedia.org/wiki/Planificaci%C3%B3n_de_procesos" target="_blank">Conceptos</a> | 
-               <a href="https://www.guru99.com/process-scheduling.html" target="_blank">Algoritmos</a></p>
-          </div>
-        </div>
-        <div class="uva-item">
-          <h3>UVA 2: Administración de Memoria</h3>
-          <div class="uva-descripcion">
-            <p>Paginación, segmentación y asignación de memoria.</p>
-            <p><a href="https://www.tutorialspoint.com/operating_system/os_memory_management.htm" target="_blank">Teoría</a> | 
-               <a href="https://www.geeksforgeeks.org/paging-in-operating-system/" target="_blank">Paginación</a></p>
-          </div>
-        </div>
-        <div class="uva-item">
-          <h3>UVA 3: Sistemas de Archivos</h3>
-          <div class="uva-descripcion">
-            <p>Diseño e implementación de un sistema de archivos básico.</p>
-            <p><a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/10_FileSystems.html" target="_blank">Notas</a> | 
-               <a href="https://opensource.com/article/19/6/how-filesystems-work" target="_blank">Funcionamiento</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- Actividades -->
+      <section class="cuadrante actividades">
+        <h2>Actividades UVAs</h2>
 
-    <div class="seccion" id="bibliografia">
-      <h2>Bibliografía</h2>
-      <ul>
-        <li>"Operating System Concepts" – Silberschatz, Galvin, Gagne</li>
-        <li><a href="https://www.os-book.com/" target="_blank">Sitio oficial del libro</a></li>
-        <li><a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/" target="_blank">Notas de curso</a></li>
-        <li><a href="https://www.tutorialspoint.com/operating_system/index.htm" target="_blank">TutorialsPoint</a></li>
-        <li>"Modern Operating Systems" – Andrew S. Tanenbaum</li>
-      </ul>
+        <div class="bloque">
+          <h3>UVA 1: Introducción a redes</h3>
+          <p>Modelos OSI y TCP/IP. Enrutamiento y direccionamiento.</p>
+          <a href="#">Apunte OSI</a>
+        </div>
+
+        <div class="bloque">
+          <h3>UVA 2: Seguridad de la información</h3>
+          <p>Cifrado simétrico y asimétrico. Firewall y antivirus.</p>
+          <a href="#">Presentación UADE</a>
+        </div>
+
+        <div class="bloque">
+          <h3>UVA 3: Virtualización</h3>
+          <p>Tipos de máquinas virtuales. Hipervisores. Cloud básica.</p>
+          <a href="#">Video VMware</a>
+        </div>
+      </section>
+
+      <!-- Bibliografía -->
+      <section class="cuadrante bibliografia">
+        <h2>Bibliografía</h2>
+        <div class="bloque">
+          <ul>
+            <li>Tanenbaum – Redes de Computadoras</li>
+            <li>Fundamentos de Sistemas Distribuidos – Coulouris</li>
+            <li>Manual técnico UADE – Seguridad en redes</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer>
-    <p><strong>Curso:</strong> 509495 | <strong>Profesor:</strong> Dr. Carlos Fernández Rivas</p>
+    <div class="footer-contenido">
+      <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+      <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+    </div>
+    <img src="../img/UADE.png" alt="Logo UADE" />
   </footer>
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
 
     if (localStorage.getItem('modoOscuro') === 'true') {
       linkOscuro.href = '../css/oscuro.css';
+      body.classList.add('dark-mode');
     }
 
     btn.addEventListener('click', function () {
-      if (linkOscuro.href.includes('oscuro.css')) {
-        linkOscuro.href = '';
-        localStorage.setItem('modoOscuro', 'false');
-      } else {
-        linkOscuro.href = '../css/oscuro.css';
-        localStorage.setItem('modoOscuro', 'true');
-      }
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : '../css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      localStorage.setItem('modoOscuro', String(!isDark));
+      body.classList.add('modo-transicion');
+      setTimeout(() => body.classList.remove('modo-transicion'), 500);
     });
   </script>
 </body>

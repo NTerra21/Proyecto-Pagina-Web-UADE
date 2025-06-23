@@ -140,10 +140,14 @@
       color: #f0f0f0;
     }
 
-    body.dark-mode main,
-    body.dark-mode table {
-      background-color: #1e1e1e;
-    }
+body.dark-mode table {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode main {
+  background-color: transparent !important;
+}
+
 
     body.dark-mode .actividades li {
       background-color: #1f1f1f;
@@ -180,7 +184,7 @@
     </ul>
   </nav>
 
-  <main>
+  <main class="contenedor-principal">
     <p>Este sitio te permite llevar el control de tus materias, tareas, exámenes y más de forma clara y centralizada.</p>
 
     <table>
@@ -246,15 +250,17 @@
     }
 
     btn.addEventListener('click', function () {
-      if (linkOscuro.href.includes('oscuro.css')) {
-        linkOscuro.href = '';
-        body.classList.remove('dark-mode');
-        localStorage.setItem('modoOscuro', 'false');
-      } else {
-        linkOscuro.href = 'css/oscuro.css';
-        body.classList.add('dark-mode');
-        localStorage.setItem('modoOscuro', 'true');
-      }
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : 'css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      body.classList.add('modo-transicion');
+    
+      // Elimina la clase después de 500ms
+      setTimeout(() => {
+        body.classList.remove('modo-transicion');
+      }, 500);
+  
+      localStorage.setItem('modoOscuro', String(!isDark));
     });
   </script>
 </body>

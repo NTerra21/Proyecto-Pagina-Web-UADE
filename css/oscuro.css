@@ -82,3 +82,18 @@ body.dark-mode header nav a {
 #bibliografia ul li {
   color: #ddd;
 }
+
+body.dark-mode .tarjeta-aviso {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+body.dark-mode .tarjeta-aviso strong {
+  color: #90c4ff;
+}
+
+body.dark-mode .tarjeta-aviso a {
+  color: #71aaff;
+}
+
+

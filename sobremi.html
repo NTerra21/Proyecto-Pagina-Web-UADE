@@ -99,8 +99,16 @@
       const isDark = linkOscuro.href.includes('oscuro.css');
       linkOscuro.href = isDark ? '' : 'css/oscuro.css';
       body.classList.toggle('dark-mode', !isDark);
+      body.classList.add('modo-transicion');
+    
+      // Elimina la clase después de 500ms
+      setTimeout(() => {
+        body.classList.remove('modo-transicion');
+      }, 500);
+  
       localStorage.setItem('modoOscuro', String(!isDark));
     });
+
   </script>
 </body>
 </html>

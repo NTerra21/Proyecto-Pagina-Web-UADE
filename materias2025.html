@@ -2,56 +2,56 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Materias 2025</title>
+
   <link rel="stylesheet" href="css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <style>
-    .materias-grid {
+    .botones-materias {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
+      justify-items: center;
+      margin-top: 2rem;
     }
 
-    .materia-card {
-      background-color: #e9f2f9;
+    .boton-materia {
+      display: inline-block;
+      background-color: #2a5c82;
+      color: white !important;
+      padding: 1rem 2rem;
       border-radius: 8px;
-      padding: 1rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-
-    .materia-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .materia-card a {
       text-decoration: none;
-      color: #2a5c82;
       font-weight: bold;
+      transition: background-color 0.2s ease;
+      min-width: 220px;
     }
 
-    .materia-card a:hover {
-      text-decoration: underline;
+    .boton-materia:hover {
+      background-color: #1d3e5a;
     }
 
-    body.dark-mode .materia-card {
-      background-color: #1f1f1f;
-      border: 1px solid #444;
+    .seccion-titulo {
+      color: #2a5c82;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #2a5c82;
+      padding-bottom: 0.5rem;
     }
 
-    body.dark-mode .materia-card a {
-      color: #a8d0ff;
+    body.dark-mode .seccion-titulo {
+      color: #90c4ff;
+      border-color: #90c4ff;
     }
   </style>
 </head>
 <body>
+
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
   <header>
@@ -67,33 +67,24 @@
     </nav>
   </header>
 
-  <main>
+  <main class="contenedor-principal">
     <h2 class="seccion-titulo">Mis Materias este Cuatrimestre</h2>
 
-    <section class="materias-grid">
-      <div class="materia-card">
-        <a href="materias/analisis-matematico.html">Análisis Matemático</a>
-      </div>
-      <div class="materia-card">
-        <a href="materias/desarrollo-pagina-web.html">Desarrollo de Página Web</a>
-      </div>
-      <div class="materia-card">
-        <a href="materias/sistemas-2.html">Sistemas 2</a>
-      </div>
-      <div class="materia-card">
-        <a href="materias/programacion-2.html">Programación 2</a>
-      </div>
-    </section>
+    <div class="botones-materias">
+      <a href="materias/analisis-matematico.html" class="boton-materia">Análisis Matemático</a>
+      <a href="materias/desarrollo-pagina-web.html" class="boton-materia">Desarrollo de Página Web</a>
+      <a href="materias/sistemas-2.html" class="boton-materia">Sistemas 2</a>
+      <a href="materias/programacion-2.html" class="boton-materia">Programación 2</a>
+    </div>
   </main>
 
-    <footer>
-      <div class="footer-contenido">
-        <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
-        <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
-      </div>
-      <img src="img/UADE.png" alt="Logo UADE" />
-    </footer>
-
+  <footer>
+    <div class="footer-contenido">
+      <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+      <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+    </div>
+    <img src="img/UADE.png" alt="Logo UADE" />
+  </footer>
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
@@ -109,6 +100,13 @@
       const isDark = linkOscuro.href.includes('oscuro.css');
       linkOscuro.href = isDark ? '' : 'css/oscuro.css';
       body.classList.toggle('dark-mode', !isDark);
+      body.classList.add('modo-transicion');
+    
+      // Elimina la clase después de 500ms
+      setTimeout(() => {
+        body.classList.remove('modo-transicion');
+      }, 500);
+  
       localStorage.setItem('modoOscuro', String(!isDark));
     });
   </script>

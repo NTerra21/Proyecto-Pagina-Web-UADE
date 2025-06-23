@@ -1,3 +1,13 @@
+/* Fuente global para todo el sitio */
+html, body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #111;
+}
+
+
+
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -239,5 +249,138 @@ header nav a {
 
 header nav a.active {
   text-decoration: underline;
+}
+
+.contenedor-principal {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.tarjeta-aviso {
+  background-color: #d9e6f2; /* azul suave */
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  color: #1a3a52;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-aviso strong {
+  color: #2a5c82;
+}
+
+.tarjeta-aviso a {
+  color: #1a3a52;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tarjeta-aviso a:hover {
+  text-decoration: underline;
+}
+
+body.modo-transicion,
+body.modo-transicion html,
+body.modo-transicion header,
+body.modo-transicion footer,
+body.modo-transicion main,
+body.modo-transicion nav {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* para materias */
+
+.grid-cuadrantes {
+  display: grid;
+  grid-template-areas:
+    "fechas actividades"
+    "bibliografia actividades";
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.cuadrante {
+  background-color: #d9e6f2;
+  padding: 1.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .cuadrante {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+}
+
+.cuadrante h2 {
+  margin-top: 0;
+  color: #2a5c82;
+}
+
+body.dark-mode .cuadrante h2 {
+  color: #90c4ff;
+}
+
+.cuadrante ul {
+  padding-left: 1.2rem;
+}
+
+.fechas {
+  grid-area: fechas;
+}
+
+.actividades {
+  grid-area: actividades;
+}
+
+.bibliografia {
+  grid-area: bibliografia;
+}
+
+.bibliografia li {
+  border-bottom: 1px dashed #2a5c82;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+/* para materias 2 */
+
+.bloque {
+  background-color: #bfd5eb;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+body.dark-mode .bloque {
+  background-color: #1d1f22;
+}
+
+.bloque h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #2a5c82;
+  padding-bottom: 0.3rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.bloque ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem; /* Aumentá este valor si querés más espacio */
+}
+
+
+.bloque li {
+  line-height: 1.6;
 }
 

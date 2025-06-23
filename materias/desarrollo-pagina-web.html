@@ -2,114 +2,114 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Desarrollo de Página Web</title>
+
   <link rel="stylesheet" href="../css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
   <header>
+    <h1>Desarrollo de Página Web</h1>
     <nav>
       <ul>
         <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../avisos.html">Avisos</a></li>
-        <li><a href="../sobremi.html">Sobre Mí</a></li>
-        <li><a href="../materias2025.html">Materias 2025</a></li>
-        <li><a href="../contacto.html">Contacto</a></li>
+        <li><a href="analisis-matematico.html">Análisis Matemático</a></li>
+        <li><a href="desarrollo-pagina-web.html" class="active">Desarrollo de Página Web</a></li>
+        <li><a href="sistemas-2.html">Sistemas 2</a></li>
+        <li><a href="programacion-2.html">Programación 2</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="pagina-materia">
-    <div class="titulo-materia">
-      <h1>Desarrollo y Diseño Web</h1>
-    </div>
-
-    <div class="seccion">
-      <h2>Fechas</h2>
-      <div class="fechas-container">
-        <div class="subseccion">
+  <main class="contenedor-principal">
+    <div class="grid-cuadrantes">
+      <!-- Fechas -->
+      <section class="cuadrante fechas">
+        <h2>Fechas</h2>
+        <div class="bloque">
           <h3>Exámenes</h3>
           <ul>
-            <li><strong>15/05/2025:</strong> Primer parcial (Teórico)</li>
-            <li><strong>26/06/2025:</strong> Segundo parcial (Práctico)</li>
-            <li><strong>10/07/2025:</strong> Recuperatorio</li>
+            <li><strong>12/08:</strong> Primer parcial</li>
+            <li><strong>19/10:</strong> Segundo parcial</li>
           </ul>
         </div>
-        <div class="subseccion">
+        <div class="bloque">
           <h3>Tareas Importantes</h3>
           <ul>
-            <li><strong>05/05/2025:</strong> Entrega diseño inicial</li>
-            <li><strong>20/05/2025:</strong> Presentación prototipo</li>
-            <li><strong>10/06/2025:</strong> Entrega final proyecto</li>
+            <li><strong>05/08:</strong> Entrega boceto</li>
+            <li><strong>20/09:</strong> Publicación del proyecto</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="seccion seccion-actividades">
-      <h2>Actividades UVAs</h2>
-      <div class="actividades-contenido">
-        <div class="uva-item">
-          <h3>UVA 1: Publicación en GitHub</h3>
-          <div class="uva-descripcion">
-            <p>Publicar sitio web con GitHub Pages.</p>
-            <p><a href="https://www.youtube.com/watch?v=EWm7AnFVSAU" target="_blank">Video tutorial</a></p>
-          </div>
-        </div>
-        <div class="uva-item">
-          <h3>UVA 2: Diseño Responsive</h3>
-          <div class="uva-descripcion">
-            <p>Diseño adaptable a múltiples dispositivos.</p>
-            <p><a href="https://developer.mozilla.org/es/docs/Learn/CSS/CSS_layout/Responsive_Design" target="_blank">Guía MDN</a> | 
-               <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">CSS Grid</a></p>
-          </div>
-        </div>
-        <div class="uva-item">
-          <h3>UVA 3: Formularios HTML</h3>
-          <div class="uva-descripcion">
-            <p>Formularios interactivos con validación.</p>
-            <p><a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">W3Schools</a> | 
-               <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/input" target="_blank">MDN</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- Actividades -->
+      <section class="cuadrante actividades">
+        <h2>Actividades UVAs</h2>
 
-    <div class="seccion" id="bibliografia">
-      <h2>Bibliografía</h2>
-      <ul>
-        <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">HTML - MDN</a></li>
-        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">CSS - MDN</a></li>
-        <li><a href="https://www.w3.org/TR/html52/" target="_blank">HTML 5.2 Spec</a></li>
-        <li><a href="https://www.w3.org/TR/CSS/" target="_blank">CSS Specs</a></li>
-      </ul>
+        <div class="bloque">
+          <h3>UVA 1: HTML Básico</h3>
+          <p>Estructura básica de una página. Uso de etiquetas semánticas.</p>
+          <a href="#">Guía rápida HTML</a>
+        </div>
+
+        <div class="bloque">
+          <h3>UVA 2: CSS Moderno</h3>
+          <p>Flexbox, Grid y animaciones. Organización con clases y selectores.</p>
+          <a href="#">Tutorial CSS Grid</a>
+        </div>
+
+        <div class="bloque">
+          <h3>UVA 3: Publicación</h3>
+          <p>Uso de GitHub Pages y estructura del repositorio.</p>
+          <a href="#">Video guía</a>
+        </div>
+      </section>
+
+      <!-- Bibliografía -->
+      <section class="cuadrante bibliografia">
+        <h2>Bibliografía</h2>
+        <div class="bloque">
+          <ul>
+            <li>MDN Web Docs – HTML/CSS</li>
+            <li>W3Schools – Frontend Tutorials</li>
+            <li>Apuntes UADE – Repositorio interno</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer>
-    <p><strong>Curso:</strong> [Nro-Curso] | <strong>Profesora:</strong> Patricia Carina Litovicius</p>
+    <div class="footer-contenido">
+      <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+      <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+    </div>
+    <img src="../img/UADE.png" alt="Logo UADE" />
   </footer>
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
 
     if (localStorage.getItem('modoOscuro') === 'true') {
       linkOscuro.href = '../css/oscuro.css';
+      body.classList.add('dark-mode');
     }
 
     btn.addEventListener('click', function () {
-      if (linkOscuro.href.includes('oscuro.css')) {
-        linkOscuro.href = '';
-        localStorage.setItem('modoOscuro', 'false');
-      } else {
-        linkOscuro.href = '../css/oscuro.css';
-        localStorage.setItem('modoOscuro', 'true');
-      }
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : '../css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      localStorage.setItem('modoOscuro', String(!isDark));
+      body.classList.add('modo-transicion');
+      setTimeout(() => body.classList.remove('modo-transicion'), 500);
     });
   </script>
 </body>

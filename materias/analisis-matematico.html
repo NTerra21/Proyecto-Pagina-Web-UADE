@@ -2,111 +2,115 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Análisis Matemático</title>
+
   <link rel="stylesheet" href="../css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
   <header>
+    <h1>Análisis Matemático</h1>
     <nav>
       <ul>
         <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../avisos.html">Avisos</a></li>
-        <li><a href="../sobremi.html">Sobre Mí</a></li>
-        <li><a href="../materias2025.html">Materias 2025</a></li>
-        <li><a href="../contacto.html">Contacto</a></li>
+        <li><a href="analisis-matematico.html" class="active">Análisis Matemático</a></li>
+        <li><a href="desarrollo-pagina-web.html">Desarrollo de Página Web</a></li>
+        <li><a href="sistemas-2.html">Sistemas 2</a></li>
+        <li><a href="programacion-2.html">Programación 2</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="pagina-materia">
-    <div class="titulo-materia">
-      <h1>Análisis Matemático</h1>
-    </div>
-
-    <div class="seccion">
-      <h2>Fechas</h2>
-      <div class="fechas-container">
-        <div class="subseccion">
+  <main class="contenedor-principal">
+    <div class="grid-cuadrantes">
+      <!-- Fechas -->
+      <section class="cuadrante fechas">
+        <h2>Fechas</h2>
+        <div class="bloque">
           <h3>Exámenes</h3>
           <ul>
-            <li><strong>18/05/2025:</strong> Primer parcial (Unidades 1-3)</li>
-            <li><strong>29/06/2025:</strong> Segundo parcial (Unidades 4-6)</li>
-            <li><strong>13/07/2025:</strong> Recuperatorio</li>
+            <li><strong>17/08:</strong> Primer parcial</li>
+            <li><strong>01/09:</strong> Recuperatorio</li>
+            <li><strong>20/10:</strong> Segundo parcial</li>
           </ul>
         </div>
-        <div class="subseccion">
-          <h3>Entregas</h3>
+        <div class="bloque">
+          <h3>Tareas Importantes</h3>
           <ul>
-            <li><strong>08/05/2025:</strong> UVA 1: Límites y Continuidad</li>
-            <li><strong>22/05/2025:</strong> UVA 2: Derivadas</li>
+            <li><strong>10/08:</strong> Entrega TP Nº1</li>
+            <li><strong>25/09:</strong> Entrega TP Nº2</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="seccion seccion-actividades">
-      <h2>Actividades</h2>
-      <div class="actividades-contenido">
-        <div class="uva-item">
-          <h3>UVA 1: Límites y Continuidad</h3>
-          <div class="uva-descripcion">
-            <p>Estudio de límites funcionales y continuidad. Aplicaciones prácticas.</p>
-            <p><strong>Recursos:</strong> 
-              <a href="https://es.khanacademy.org/math/calculus-1" target="_blank">Khan Academy</a> | 
-              <a href="https://www.geogebra.org/m/z8s6qk9v" target="_blank">Visualización GeoGebra</a>
-            </p>
-          </div>
+      <!-- Actividades -->
+      <section class="cuadrante actividades">
+        <h2>Actividades UVAs</h2>
+
+        <div class="bloque">
+          <h3>UVA 1: Límite y continuidad</h3>
+          <p>Resolver guía práctica 1 y 2.</p>
+          <a href="#">Apunte guía</a>
         </div>
 
-        <div class="uva-item">
+        <div class="bloque">
           <h3>UVA 2: Derivadas</h3>
-          <div class="uva-descripcion">
-            <p>Concepto de derivada, reglas de derivación y aplicaciones.</p>
-            <p><strong>Recursos:</strong> 
-              <a href="https://www.derivative-calculator.net/" target="_blank">Calculadora</a> | 
-              <a href="https://www.wolframalpha.com/" target="_blank">Wolfram Alpha</a>
-            </p>
-          </div>
+          <p>Estudiar derivadas e interpretación gráfica.</p>
+          <a href="#">Ejercicios y teoría</a>
         </div>
-      </div>
-    </div>
 
-    <div class="seccion">
-      <h2>Bibliografía</h2>
-      <ul>
-        <li><strong>Texto base:</strong> "Cálculo de una variable" - James Stewart</li>
-        <li><strong>Complementario:</strong> "Cálculo diferencial e integral" - Granville</li>
-        <li><strong>Práctico:</strong> "Problemas de cálculo" - Demidovich</li>
-        <li><strong>Recursos online:</strong> <a href="https://www.math3d.org/" target="_blank">Visualizaciones 3D</a></li>
-      </ul>
+        <div class="bloque">
+          <h3>UVA 3: Aplicaciones de derivadas</h3>
+          <p>Resolución de problemas con extremos, tangentes.</p>
+          <a href="#">Material de apoyo</a>
+        </div>
+      </section>
+
+      <!-- Bibliografía -->
+      <section class="cuadrante bibliografia">
+        <h2>Bibliografía</h2>
+        <div class="bloque">
+          <ul>
+            <li>Stewart, James – Cálculo de una variable</li>
+            <li>Larson, Ron – Cálculo y geometría analítica</li>
+            <li>UADE – Material de Aula Virtual</li>
+          </ul>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer>
-    <p><strong>Curso:</strong> 509512 | <strong>Profesor:</strong> Dr. Carlos Fernández</p>
+    <div class="footer-contenido">
+      <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+      <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+    </div>
+    <img src="../img/UADE.png" alt="Logo UADE" />
   </footer>
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
 
     if (localStorage.getItem('modoOscuro') === 'true') {
       linkOscuro.href = '../css/oscuro.css';
+      body.classList.add('dark-mode');
     }
 
     btn.addEventListener('click', function () {
-      if (linkOscuro.href.includes('oscuro.css')) {
-        linkOscuro.href = '';
-        localStorage.setItem('modoOscuro', 'false');
-      } else {
-        linkOscuro.href = '../css/oscuro.css';
-        localStorage.setItem('modoOscuro', 'true');
-      }
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : '../css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      localStorage.setItem('modoOscuro', String(!isDark));
+      body.classList.add('modo-transicion');
+      setTimeout(() => body.classList.remove('modo-transicion'), 500);
     });
   </script>
 </body>
