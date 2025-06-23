@@ -96,10 +96,13 @@ footer img {
 
 /* Responsive */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .grid-cuadrantes {
+    grid-template-areas:
+      "fechas"
+      "actividades"
+      "bibliografia";
+    grid-template-columns: 1fr;
+  }
 }
 
 /* === ESTILOS COMUNES DE MATERIAS === */
@@ -255,6 +258,7 @@ header nav a.active {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  width: 100%;
 }
 
 .tarjeta-aviso {
