@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
   <style>
     .perfil-container {
       display: flex;
@@ -40,6 +39,14 @@
     .info-personal p {
       margin: 0.5rem 0;
     }
+
+    body.dark-mode .info-personal h2 {
+      color: #a8d0ff;
+    }
+
+    body.dark-mode .foto-perfil {
+      border-color: #a8d0ff;
+    }
   </style>
 </head>
 <body>
@@ -69,26 +76,30 @@
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
-  </footer>
+    <footer>
+      <div class="footer-contenido">
+        <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+        <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+      </div>
+      <img src="img/UADE.png" alt="Logo UADE" />
+    </footer>
+
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
 
     if (localStorage.getItem('modoOscuro') === 'true') {
       linkOscuro.href = 'css/oscuro.css';
+      body.classList.add('dark-mode');
     }
 
     btn.addEventListener('click', function () {
-      if (linkOscuro.href.includes('oscuro.css')) {
-        linkOscuro.href = '';
-        localStorage.setItem('modoOscuro', 'false');
-      } else {
-        linkOscuro.href = 'css/oscuro.css';
-        localStorage.setItem('modoOscuro', 'true');
-      }
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : 'css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      localStorage.setItem('modoOscuro', String(!isDark));
     });
   </script>
 </body>

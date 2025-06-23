@@ -3,19 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Organizador de Cursada</title>
+  <title>Inicio - Organizador de Cursada</title>
+
   <link rel="stylesheet" href="css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+      background-color: #e9f2f9;
+      color: #1a3a52;
+    }
+
+    nav {
+      background-color: #2a5c82;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background-color: #ffffff;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #2a5c82;
+      color: white;
+    }
+
+    th, td {
+      padding: 0.8rem;
+      text-align: center;
+    }
+
+    .actividades {
+      margin-top: 3rem;
+    }
+
+    .actividades h2 {
+      color: #2a5c82;
+      border-bottom: 2px solid #2a5c82;
+      padding-bottom: 0.5rem;
+    }
+
+    .actividades ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
+
+    .actividades li {
+      background-color: #d9e6f2;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border-radius: 6px;
+      color: #1a3a52;
+      transition: 0.3s;
+    }
+
+    .actividades li:hover {
+      transform: scale(1.02);
+    }
+
+    footer {
+      background-color: #2a5c82;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: auto;
+    }
+
+    .dark-button {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .dark-button:hover {
+      background-color: #666;
+    }
+
+    /* Modo oscuro para index */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode main,
+    body.dark-mode table {
+      background-color: #1e1e1e;
+    }
+
+    body.dark-mode .actividades li {
+      background-color: #1f1f1f;
+      color: #f0f0f0;
+      border: 1px solid #444;
+    }
+
+    body.dark-mode th {
+      background-color: #333;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode td {
+      background-color: #222;
+      color: #ddd;
+    }
+  </style>
 </head>
 <body>
+
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
   <nav>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="avisos.html">Avisos</a></li>
-      <li><a href="sobremi.html">Sobre mí</a></li>
+      <li><a href="sobremi.html">Sobre Mí</a></li>
       <li><a href="materias2025.html">Materias 2025</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
@@ -23,9 +175,9 @@
 
   <main>
     <h1>Bienvenido al Organizador de Cursada</h1>
-    <p>Este sitio te permite llevar el control de tus materias, tareas, exámenes y más.</p>
+    <p>Este sitio te permite llevar el control de tus materias, tareas, exámenes y más de forma clara y centralizada.</p>
 
-    <table class="tabla-materias">
+    <table>
       <thead>
         <tr>
           <th>Materia</th>
@@ -69,25 +221,33 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 - Proyecto Final UADE - Desarrollado por Juan Pérez</p>
-    <img src="img/UADE.png" alt="UADE Logo" style="height: 30px; margin-top: 0.5rem;" />
-  </footer>
+    <footer>
+      <div class="footer-contenido">
+        <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+        <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+      </div>
+      <img src="img/UADE.png" alt="Logo UADE" />
+    </footer>
+
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
 
     if (localStorage.getItem('modoOscuro') === 'true') {
       linkOscuro.href = 'css/oscuro.css';
+      body.classList.add('dark-mode');
     }
 
     btn.addEventListener('click', function () {
       if (linkOscuro.href.includes('oscuro.css')) {
         linkOscuro.href = '';
+        body.classList.remove('dark-mode');
         localStorage.setItem('modoOscuro', 'false');
       } else {
         linkOscuro.href = 'css/oscuro.css';
+        body.classList.add('dark-mode');
         localStorage.setItem('modoOscuro', 'true');
       }
     });

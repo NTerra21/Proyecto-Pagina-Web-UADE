@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
   <style>
     .materias-grid {
       display: grid;
@@ -42,11 +41,13 @@
       text-decoration: underline;
     }
 
-    .materias-grid h2 {
-      grid-column: 1 / -1;
-      text-align: center;
-      color: #2a5c82;
-      margin-bottom: 1rem;
+    body.dark-mode .materia-card {
+      background-color: #1f1f1f;
+      border: 1px solid #444;
+    }
+
+    body.dark-mode .materia-card a {
+      color: #a8d0ff;
     }
   </style>
 </head>
@@ -66,43 +67,49 @@
     </nav>
   </header>
 
-  <main class="materias-grid">
-    <h2>Mis Materias este Cuatrimestre</h2>
+  <main>
+    <h2 class="seccion-titulo">Mis Materias este Cuatrimestre</h2>
 
-    <div class="materia-card">
-      <a href="materias/analisis-matematico.html">Análisis Matemático</a>
-    </div>
-    <div class="materia-card">
-      <a href="materias/desarrollo-pagina-web.html">Desarrollo de Página Web</a>
-    </div>
-    <div class="materia-card">
-      <a href="materias/sistemas-2.html">Sistemas 2</a>
-    </div>
-    <div class="materia-card">
-      <a href="materias/programacion-2.html">Programación 2</a>
-    </div>
+    <section class="materias-grid">
+      <div class="materia-card">
+        <a href="materias/analisis-matematico.html">Análisis Matemático</a>
+      </div>
+      <div class="materia-card">
+        <a href="materias/desarrollo-pagina-web.html">Desarrollo de Página Web</a>
+      </div>
+      <div class="materia-card">
+        <a href="materias/sistemas-2.html">Sistemas 2</a>
+      </div>
+      <div class="materia-card">
+        <a href="materias/programacion-2.html">Programación 2</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
-  </footer>
+    <footer>
+      <div class="footer-contenido">
+        <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+        <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+      </div>
+      <img src="img/UADE.png" alt="Logo UADE" />
+    </footer>
+
 
   <script>
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
 
     if (localStorage.getItem('modoOscuro') === 'true') {
       linkOscuro.href = 'css/oscuro.css';
+      body.classList.add('dark-mode');
     }
 
     btn.addEventListener('click', function () {
-      if (linkOscuro.href.includes('oscuro.css')) {
-        linkOscuro.href = '';
-        localStorage.setItem('modoOscuro', 'false');
-      } else {
-        linkOscuro.href = 'css/oscuro.css';
-        localStorage.setItem('modoOscuro', 'true');
-      }
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : 'css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      localStorage.setItem('modoOscuro', String(!isDark));
     });
   </script>
 </body>

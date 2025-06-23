@@ -35,11 +35,35 @@ nav a.active {
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #2a5c82;
-    color: white;
-    margin-top: 2rem;
+  background-color: #2a5c82;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+footer a {
+  color: #a8d0ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer img {
+  height: 30px;
 }
 
 /* Botón modo oscuro */

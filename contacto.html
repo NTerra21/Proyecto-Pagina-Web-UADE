@@ -1,53 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link id="tema-oscuro" rel="stylesheet" href="" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .contacto-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contacto-container h2 {
+      text-align: center;
+      color: #2a5c82;
+      margin-bottom: 1.5rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    label {
+      font-weight: bold;
+      color: #1a3a52;
+    }
+
+    input,
+    textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #2a5c82;
+      box-shadow: 0 0 0 2px rgba(42, 92, 130, 0.2);
+    }
+
+    button[type="submit"] {
+      background-color: #2a5c82;
+      color: white;
+      border: none;
+      padding: 0.8rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #1a3a52;
+    }
+
+    .form-aviso {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    /* Modo oscuro */
+    body.dark-mode .contacto-container {
+      background-color: #1f1f1f;
+      color: #f0f0f0;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    body.dark-mode input,
+    body.dark-mode textarea {
+      background-color: #2a2a2a;
+      color: #f0f0f0;
+      border-color: #444;
+    }
+
+    body.dark-mode input:focus,
+    body.dark-mode textarea:focus {
+      border-color: #a8d0ff;
+      box-shadow: 0 0 0 2px rgba(168, 208, 255, 0.2);
+    }
+
+    body.dark-mode label {
+      color: #ddd;
+    }
+
+    body.dark-mode .form-aviso {
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Contacto</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="avisos.html">Avisos</a></li>
-                <li><a href="sobremi.html">Sobre Mí</a></li>
-                <li><a href="materias2025.html">Materias 2025</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
-    <main class="form-container">
-        <form>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="asunto">Asunto:</label>
-                <input type="text" id="asunto" name="asunto" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit">Enviar Mensaje</button>
-        </form>
-    </main>
+  <header>
+    <h1>Contacto</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="avisos.html">Avisos</a></li>
+        <li><a href="sobremi.html">Sobre Mí</a></li>
+        <li><a href="materias2025.html">Materias 2025</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer>
-        <p>© 2025 Nicolás Terradas - Lic. Gestión de la Tecnología e Información</p>
-    </footer>
+  <main>
+    <section class="contacto-container">
+      <h2>Enviame un mensaje</h2>
+      <form action="#" method="POST">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez" />
+
+        <label for="correo">Correo electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
+          required
+          placeholder="ejemplo@gmail.com"
+        />
+        <p class="form-aviso">* Solo se permiten direcciones @gmail.com</p>
+
+        <label for="mensaje">Mensaje</label>
+        <textarea
+          id="mensaje"
+          name="mensaje"
+          rows="5"
+          required
+          placeholder="Escribí tu consulta o mensaje..."
+        ></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <p>© 2025 Nicolás Terradas - Proyecto UADE</p>
+      <a href="https://github.com/NTerra21/Proyecto-Pagina-Web-UADE/tree/gh-pages" target="_blank">Repositorio GitHub</a>
+    </div>
+    <img src="img/UADE.png" alt="Logo UADE" />
+  </footer>
+
+  <script>
+    const linkOscuro = document.getElementById('tema-oscuro');
+    const btn = document.getElementById('modoOscuroBtn');
+    const body = document.body;
+
+    if (localStorage.getItem('modoOscuro') === 'true') {
+      linkOscuro.href = 'css/oscuro.css';
+      body.classList.add('dark-mode');
+    }
+
+    btn.addEventListener('click', function () {
+      const isDark = linkOscuro.href.includes('oscuro.css');
+      linkOscuro.href = isDark ? '' : 'css/oscuro.css';
+      body.classList.toggle('dark-mode', !isDark);
+      localStorage.setItem('modoOscuro', String(!isDark));
+    });
+  </script>
 </body>
 </html>
