@@ -4,23 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto</title>
+
   <link rel="stylesheet" href="css/style.css" />
   <link id="tema-oscuro" rel="stylesheet" href="" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <style>
-    .contacto-container {
+    main {
       max-width: 600px;
       margin: 2rem auto;
-      background-color: #ffffff;
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: #d9e6f2;
+      border-radius: 10px;
+      transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    .contacto-container h2 {
-      text-align: center;
-      color: #2a5c82;
-      margin-bottom: 1.5rem;
+    body.dark-mode main {
+      background-color: #1e1e1e;
+      color: #f0f0f0;
     }
 
     form {
@@ -29,77 +30,50 @@
       gap: 1.2rem;
     }
 
-    label {
-      font-weight: bold;
-      color: #1a3a52;
-    }
-
-    input,
-    textarea {
+    input, textarea {
       padding: 0.8rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 1rem;
-      resize: vertical;
+      width: 100%;
     }
 
-    input:focus,
-    textarea:focus {
+    input:focus, textarea:focus {
       outline: none;
       border-color: #2a5c82;
-      box-shadow: 0 0 0 2px rgba(42, 92, 130, 0.2);
     }
 
-    button[type="submit"] {
-      background-color: #2a5c82;
-      color: white;
-      border: none;
+    button {
       padding: 0.8rem;
-      border-radius: 6px;
-      font-size: 1rem;
+      background-color: #2a5c82;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.2s;
+      transition: background-color 0.3s ease;
     }
 
-    button[type="submit"]:hover {
-      background-color: #1a3a52;
+    button:hover {
+      background-color: #1b3e5a;
     }
 
-    .form-aviso {
-      font-size: 0.9rem;
-      color: #555;
+    .alerta-exito {
+      padding: 1rem;
+      margin-top: 1rem;
+      background-color: #c0ebc0;
+      color: #265c26;
+      border-radius: 8px;
+      display: none;
     }
 
-    /* Modo oscuro */
-    body.dark-mode .contacto-container {
-      background-color: #1f1f1f;
-      color: #f0f0f0;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    }
-
-    body.dark-mode input,
-    body.dark-mode textarea {
-      background-color: #2a2a2a;
-      color: #f0f0f0;
-      border-color: #444;
-    }
-
-    body.dark-mode input:focus,
-    body.dark-mode textarea:focus {
-      border-color: #a8d0ff;
-      box-shadow: 0 0 0 2px rgba(168, 208, 255, 0.2);
-    }
-
-    body.dark-mode label {
-      color: #ddd;
-    }
-
-    body.dark-mode .form-aviso {
-      color: #aaa;
+    body.dark-mode .alerta-exito {
+      background-color: #2f4f2f;
+      color: #a5f5a5;
     }
   </style>
 </head>
 <body>
+
   <button class="dark-button" id="modoOscuroBtn">Modo Oscuro</button>
 
   <header>
@@ -115,36 +89,22 @@
     </nav>
   </header>
 
-  <main class="contenedor-principal">
-    <section class="contacto-container">
-      <h2>Enviame un mensaje</h2>
-      <form action="#" method="POST">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez" />
+  <main>
+    <h2>Dejame tu consulta</h2>
 
-        <label for="correo">Correo electrónico</label>
-        <input
-          type="email"
-          id="correo"
-          name="correo"
-          pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$"
-          required
-          placeholder="ejemplo@gmail.com"
-        />
-        <p class="form-aviso">* Solo se permiten direcciones @gmail.com</p>
+    <form id="form-contacto" onsubmit="return enviarFormulario(event)">
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required />
 
-        <label for="mensaje">Mensaje</label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          rows="5"
-          required
-          placeholder="Escribí tu consulta o mensaje..."
-        ></textarea>
+      <input type="email" name="correo" placeholder="Tu correo (@gmail.com)" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" required />
 
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+      <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <div class="alerta-exito" id="alerta">
+      ✅ ¡Tu mensaje ha sido enviado con éxito!
+    </div>
   </main>
 
   <footer>
@@ -156,6 +116,7 @@
   </footer>
 
   <script>
+    // Modo oscuro
     const linkOscuro = document.getElementById('tema-oscuro');
     const btn = document.getElementById('modoOscuroBtn');
     const body = document.body;
@@ -169,15 +130,20 @@
       const isDark = linkOscuro.href.includes('oscuro.css');
       linkOscuro.href = isDark ? '' : 'css/oscuro.css';
       body.classList.toggle('dark-mode', !isDark);
-      body.classList.add('modo-transicion');
-    
-      // Elimina la clase después de 500ms
-      setTimeout(() => {
-        body.classList.remove('modo-transicion');
-      }, 500);
-  
       localStorage.setItem('modoOscuro', String(!isDark));
+      body.classList.add('modo-transicion');
+      setTimeout(() => body.classList.remove('modo-transicion'), 500);
     });
+
+    // Envío del formulario simulado
+    function enviarFormulario(event) {
+      event.preventDefault();
+      const alerta = document.getElementById('alerta');
+      alerta.style.display = 'block';
+      document.getElementById('form-contacto').reset();
+      setTimeout(() => alerta.style.display = 'none', 5000);
+      return false;
+    }
   </script>
 </body>
 </html>
